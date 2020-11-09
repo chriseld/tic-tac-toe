@@ -1,0 +1,92 @@
+body {
+    text-align: center;
+    background-color: rgb(214, 192, 151);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 500px;
+    height: 500px;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    height: 432px;
+    width: 432px;
+    background-image: url(./img/chalkboard.png);
+    border: 24px solid transparent;
+    border-image: url(./img/wood.jpg) 30 stretch;
+}
+
+.square {
+    height: 140px;
+    width: 140px;
+    font-family: 'Goldman', cursive;
+    font-size: 90px;
+    color: white;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    pointer-events: none;
+    opacity: 0;
+  
+    will-change: transform, opacity;
+
+    transform: scale(1.15);
+
+    transition:
+        transform 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+        opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  }
+
+.visible {
+    pointer-events: auto;
+
+    background: rgba(0, 0, 0, .6);
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition:
+      transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+      opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+}
+
+.modalBox {
+    background-color: rgb(214, 192, 151);
+    border-radius: 8px;
+    border: 3px solid black;
+    margin: 20%;
+    padding: 20px;
+}
+
+#restart {
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    font-size: larger;
+    border-radius: 41px;
+    background: linear-gradient(145deg, #e5cda2, #c1ad88);
+    box-shadow:  8px 8px 15px #a19071, -8px -8px 15px #fff0bd;
+}
+
+#restart:hover {
+    border-radius: 41px;
+    background: #d6c097;
+    box-shadow: inset 8px 8px 15px #a19071, inset -8px -8px 15px #fff0bd;
+}
